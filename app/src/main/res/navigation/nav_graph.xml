@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/signInFragment">
+
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.go4lunch.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+    <fragment
+        android:id="@+id/listViewRestoFragment"
+        android:name="com.example.go4lunch.ListViewRestoFragment"
+        android:label="fragment_list_view_resto_list"
+        tools:layout="@layout/fragment_list_view_resto_list" />
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="com.example.go4lunch.ui.login.LoginActivity"
+        android:label="LoginActivity" />
+    <activity
+        android:id="@+id/facebookLoginActivity"
+        android:name="com.example.go4lunch.FacebookLoginActivity"
+        android:label="activity_facebook_login"
+        tools:layout="@layout/activity_facebook_login" />
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.example.go4lunch.SignInFragment"
+        android:label="fragment_sign_in"
+        tools:layout="@layout/fragment_sign_in" />
+    <fragment
+        android:id="@+id/mapsRestoFragment"
+        android:name="com.example.go4lunch.MapsRestoFragment"
+        android:label="fragment_maps_resto"
+        tools:layout="@layout/fragment_maps_resto" />
+</navigation>
