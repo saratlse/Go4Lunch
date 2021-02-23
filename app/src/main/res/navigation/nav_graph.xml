@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/signInFragment">
+    app:startDestination="@id/mapsRestoFragment">
 
     <activity
         android:id="@+id/mainActivity"
@@ -14,7 +14,14 @@
         android:id="@+id/listViewRestoFragment"
         android:name="com.example.go4lunch.ListViewRestoFragment"
         android:label="fragment_list_view_resto_list"
-        tools:layout="@layout/fragment_list_view_resto_list" />
+        tools:layout="@layout/fragment_list_view_resto_list" >
+        <action
+            android:id="@+id/action_listViewRestoFragment_to_mapsRestoFragment"
+            app:destination="@id/mapsRestoFragment" />
+        <action
+            android:id="@+id/action_listViewRestoFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+    </fragment>
     <activity
         android:id="@+id/loginActivity"
         android:name="com.example.go4lunch.ui.login.LoginActivity"
@@ -28,10 +35,21 @@
         android:id="@+id/signInFragment"
         android:name="com.example.go4lunch.SignInFragment"
         android:label="fragment_sign_in"
-        tools:layout="@layout/fragment_sign_in" />
+        tools:layout="@layout/fragment_sign_in" >
+        <action
+            android:id="@+id/action_signInFragment_to_listViewRestoFragment"
+            app:destination="@id/listViewRestoFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_facebookLoginActivity"
+            app:destination="@id/facebookLoginActivity" />
+    </fragment>
     <fragment
         android:id="@+id/mapsRestoFragment"
         android:name="com.example.go4lunch.MapsRestoFragment"
         android:label="fragment_maps_resto"
-        tools:layout="@layout/fragment_maps_resto" />
+        tools:layout="@layout/fragment_maps_resto" >
+        <action
+            android:id="@+id/action_mapsRestoFragment_to_listViewRestoFragment"
+            app:destination="@id/listViewRestoFragment" />
+    </fragment>
 </navigation>
