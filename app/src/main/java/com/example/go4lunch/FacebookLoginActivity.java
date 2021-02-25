@@ -1,6 +1,5 @@
 package com.example.go4lunch;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -13,18 +12,12 @@ import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
-import com.facebook.FacebookSdk;
-import com.facebook.appevents.AppEventsLogger;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.firebase.auth.AuthCredential;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-
-import bolts.Task;
 
 
 public class FacebookLoginActivity extends AppCompatActivity {
@@ -75,12 +68,12 @@ public class FacebookLoginActivity extends AppCompatActivity {
         FirebaseUser currentUser = mAuth.getCurrentUser();
 
         if (currentUser != null){
-            updateUI();
+            updateUI(currentUser);
         }
 
     }
 
-    private void updateUI() {
+    private void updateUI(FirebaseUser user) {
         Toast.makeText( FacebookLoginActivity.this,"You're logged in", Toast.LENGTH_LONG);
         Intent accountIntent = new Intent(FacebookLoginActivity.this, AccountActivity.class);
         startActivity(accountIntent);
@@ -106,14 +99,14 @@ public class FacebookLoginActivity extends AppCompatActivity {
                         // Sign in success, update UI with the signed-in user's information
                         Log.d(TAG, "signInWithCredential:success");
                         FirebaseUser user = mAuth.getCurrentUser();
-                        updateUI();
+                        updateUI(user);
                     } else {
                         // If sign in fails, display a message to the user.
                         Log.w(TAG, "signInWithCredential:failure", task.getException());
                         Toast.makeText(FacebookLoginActivity.this, "Authentication failed.",
                                 Toast.LENGTH_SHORT).show();
                     }
-                    updateUI();
+                    updateUI(null);
 
                     // ...
                 });
