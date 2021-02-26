@@ -20,7 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 
-public class FacebookLoginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     private CallbackManager mCallbackManager;
 
@@ -74,8 +74,8 @@ public class FacebookLoginActivity extends AppCompatActivity {
     }
 
     private void updateUI(FirebaseUser user) {
-        Toast.makeText( FacebookLoginActivity.this,"You're logged in", Toast.LENGTH_LONG);
-        Intent accountIntent = new Intent(FacebookLoginActivity.this, AccountActivity.class);
+        Toast.makeText( LoginActivity.this,"You're logged in", Toast.LENGTH_LONG);
+        Intent accountIntent = new Intent(LoginActivity.this, AccountActivity.class);
         startActivity(accountIntent);
         finish();
     }
@@ -103,7 +103,7 @@ public class FacebookLoginActivity extends AppCompatActivity {
                     } else {
                         // If sign in fails, display a message to the user.
                         Log.w(TAG, "signInWithCredential:failure", task.getException());
-                        Toast.makeText(FacebookLoginActivity.this, "Authentication failed.",
+                        Toast.makeText(LoginActivity.this, "Authentication failed.",
                                 Toast.LENGTH_SHORT).show();
                     }
                     updateUI(null);
@@ -111,6 +111,5 @@ public class FacebookLoginActivity extends AppCompatActivity {
                     // ...
                 });
     }
-
 
 }

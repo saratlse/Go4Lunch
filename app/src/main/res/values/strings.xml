@@ -1,7 +1,7 @@
 <resources>
     <!-- Facebook consumer key and secret -->
     <string name="app_name">Go4Lunch</string>
-    <string name="facebook_app_id">14922055461200616</string>
+    <string name="facebook_app_id">4922055461200616</string>
     <string name="fb_login_protocol_scheme">fb4922055461200616</string>
 
     <!-- TODO: Remove or change this placeholder text -->

@@ -4,14 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Toast;
 
-import com.example.go4lunch.ui.login.AccountActivity;
-import com.facebook.FacebookSdk;
-import com.facebook.appevents.AppEventsLogger;
-
-import com.facebook.FacebookSdk;
-import com.facebook.appevents.AppEventsLogger;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -44,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
             finish();
 
         }else {
-            Intent signIntent = new Intent(MainActivity.this, FacebookLoginActivity.class);
+            Intent signIntent = new Intent(MainActivity.this, LoginActivity.class);
             startActivity(signIntent);
             finish();
         }

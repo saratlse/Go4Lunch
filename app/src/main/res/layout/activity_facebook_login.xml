@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FacebookLoginActivity">
+    tools:context=".LoginActivity">
 
 
     <ImageView
@@ -26,7 +26,6 @@
         android:layout_height="match_parent"
         android:gravity="bottom"
         android:orientation="vertical">
-
 
 
         <com.facebook.login.widget.LoginButton
