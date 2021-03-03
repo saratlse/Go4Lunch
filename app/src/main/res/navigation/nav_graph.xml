@@ -28,7 +28,7 @@
         android:label="LoginActivity" />
     <activity
         android:id="@+id/facebookLoginActivity"
-        android:name="com.example.go4lunch.LoginActivity"
+        android:name="com.example.go4lunch.FacebookLoginActivity"
         android:label="activity_facebook_login"
         tools:layout="@layout/activity_facebook_login" />
     <fragment
