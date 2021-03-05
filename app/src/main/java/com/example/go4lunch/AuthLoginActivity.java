@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.example.go4lunch.ui.login.AccountActivity;
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -20,7 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 
-public class FacebookLoginActivity extends AppCompatActivity {
+public class AuthLoginActivity extends AppCompatActivity {
 
     private CallbackManager mCallbackManager;
 
@@ -31,7 +30,7 @@ public class FacebookLoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_facebook_login);
+        setContentView(R.layout.activity_auth_login);
 
         //Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
@@ -74,8 +73,8 @@ public class FacebookLoginActivity extends AppCompatActivity {
     }
 
     private void updateUI(FirebaseUser user) {
-        Toast.makeText( FacebookLoginActivity.this,"You're logged in", Toast.LENGTH_LONG);
-        Intent accountIntent = new Intent(FacebookLoginActivity.this, StartActivity.class);
+        Toast.makeText( AuthLoginActivity.this,"You're logged in", Toast.LENGTH_LONG);
+        Intent accountIntent = new Intent(AuthLoginActivity.this, HomeActivity.class);
         startActivity(accountIntent);
         finish();
     }
@@ -103,7 +102,7 @@ public class FacebookLoginActivity extends AppCompatActivity {
                     } else {
                         // If sign in fails, display a message to the user.
                         Log.w(TAG, "signInWithCredential:failure", task.getException());
-                        Toast.makeText(FacebookLoginActivity.this, "Authentication failed.",
+                        Toast.makeText(AuthLoginActivity.this, "Authentication failed.",
                                 Toast.LENGTH_SHORT).show();
                     }
                     updateUI(null);

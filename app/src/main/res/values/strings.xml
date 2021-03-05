@@ -32,4 +32,10 @@
     <string name="bottom_navigation_workmates">Workmates</string>
 
 
+    <!-- NAVIGATION DRAWER -->
+    <string name="menu_yourLunch">YOUR LUNCH</string>
+    <string name="menu_settings">SETTINGS</string>
+    <string name="menu_logout">LOGOUT</string>
+
+
 </resources>
