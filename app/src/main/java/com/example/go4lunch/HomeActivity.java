@@ -11,13 +11,14 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class HomeActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
         BottomNavigationView btnNav = findViewById(R.id.bottom_navigation);
-        btnNav.setOnNavigationItemSelectedListener(navListener);
+        btnNav.setOnNavigationItemSelectedListener(bottomNavMethod);
 
         //Setting Home Fragment as main fragment
         getSupportFragmentManager().beginTransaction()
@@ -26,20 +27,20 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     //Listener Nav Bar
-    private BottomNavigationView.OnNavigationItemSelectedListener navListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
+    private BottomNavigationView.OnNavigationItemSelectedListener bottomNavMethod = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
             Fragment selectedFragment = null;
-            switch (item.getItemId()){
+            switch (menuItem.getItemId()){
                 case R.id.map:
                     selectedFragment = new MapsRestoFragment();
                     break;
 
-                case R.id.list_view_resto:
+                case R.id.restaurante:
                     selectedFragment = new ListViewRestoFragment();
                     break;
                     
-                case R.id.list_view_workmates:
+                case R.id.workmates:
                     selectedFragment = new WorkmateListViewFragment();
                     break;
             }
