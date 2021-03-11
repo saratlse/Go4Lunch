@@ -19,10 +19,15 @@ public class HomeActivity extends AppCompatActivity {
 
         BottomNavigationView btnNav = findViewById(R.id.bottom_navigation);
         btnNav.setOnNavigationItemSelectedListener(bottomNavMethod);
+        //Initialize fragment
+        Fragment fragment = new MapsRestoFragment();
 
-        //Setting Home Fragment as main fragment
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fragment_layout, new MapsRestoFragment()).commit();
+        //Open fragment
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragment_layout,fragment)
+                .commit();
+
 
     }
 
@@ -39,7 +44,7 @@ public class HomeActivity extends AppCompatActivity {
                 case R.id.restaurante:
                     selectedFragment = new ListViewRestoFragment();
                     break;
-                    
+
                 case R.id.workmates:
                     selectedFragment = new WorkmateListViewFragment();
                     break;
